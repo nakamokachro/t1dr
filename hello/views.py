@@ -12,7 +12,12 @@ def index(request):
 def db(request):
     if request.method == 'POST':
         query = request.POST.get('textfield', None)
-        html = ("<H1>I will tl;dr this for you:</H1>" + query)
+        answer = main(query)
+        html = ("<H1>I will tl;dr this for you:</H1>" + answer)
         return HttpResponse(html)
     else:
         return render(request, 'form.html')
+    
+
+ def main(query):
+    return query.upper()
