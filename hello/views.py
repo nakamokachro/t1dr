@@ -19,5 +19,5 @@ def db(request):
         return render(request, 'form.html')
     
 
- def main(query):
+def main(query):
     return query.upper()
